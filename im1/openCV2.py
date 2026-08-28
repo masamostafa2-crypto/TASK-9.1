@@ -16,6 +16,7 @@ disparity_visual = cv.normalize(disparity_true, None, 0, 255, cv.NORM_MINMAX, dt
 plt.figure(figsize=(10, 6))
 plt.title("disparity Map")
 plt.imshow(disparity_visual, cmap='bone') 
+plt.imsave("disparity_map_0.png", disparity_visual, cmap="bone")
 plt.colorbar()
 plt.show()
 res = (disparity_visual - disparity_visual.min()) / (disparity_visual.max() - disparity_visual.min())
