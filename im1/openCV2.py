@@ -21,5 +21,13 @@ plt.show()
 res = (disparity_visual - disparity_visual.min()) / (disparity_visual.max() - disparity_visual.min())
 print("Normalized Array Sample:")
 print(res[:5, :5].tolist()) 
+# to get the depth  
+baseline = 171.548
+focal_length = 6338.47 #from the calibration file 
+pixel_y = 1000
+pixel_x = 2000
+depth_mm = (baseline* focal_length) / disparity_true[pixel_y, pixel_x]
+print(f"the depth at x = 2000 and y = 1000 is equal to {depth_mm}")
+
 
 
